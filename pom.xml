@@ -3,5 +3,10 @@
   <groupId>web.service</groupId>
   <artifactId>web.service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+<<<<<<< HEAD
   <name>web.service</name>
+=======
+  <name>webServiceSoap</name>
+  <description>web service hotel</description>
+>>>>>>> branch 'master' of https://github.com/jianglijuan0110/web.service.git
 </project>
