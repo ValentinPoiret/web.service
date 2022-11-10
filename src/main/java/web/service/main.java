@@ -1,4 +1,5 @@
 package web.service;
+<<<<<<< HEAD
 import java.util.Scanner;
 public class main {
 
@@ -27,5 +28,9 @@ public class main {
 		prix = hotel.recherche(null, dateArrive, dateDepart );
 
 	}
+=======
+
+public class main {
+>>>>>>> branch 'master' of https://github.com/jianglijuan0110/web.service.git
 
 }
