@@ -7,9 +7,11 @@ public class HotelImpl implements Hotel {
 	private Adresse adresse;
 	
 	/*CONSTRUCTEUR*/
-	public float recherche(Chambre chambre, int dateArrive, int dateDepart) {
-		// TODO Auto-generated method stub
-		return 0;
+	public HotelImpl(String nom, int nbEtoiles, Adresse adresse) {
+		
+		this.nom = nom;
+		this.nbEtoiles = nbEtoiles;
+		this.adresse = adresse;
 	}
 	
 	/*METHODE*/
@@ -18,12 +20,6 @@ public class HotelImpl implements Hotel {
 		return chambre;
 	}
 
-	public HotelImpl(String nom, int nbEtoiles, Adresse adresse) {
-		super();
-		this.nom = nom;
-		this.nbEtoiles = nbEtoiles;
-		this.adresse = adresse;
-	}
 
 	public void setChambre(Chambre chambre) {
 		this.chambre = chambre;
@@ -38,7 +34,6 @@ public class HotelImpl implements Hotel {
 	}
 	
 	public String getNom() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	public void setNom(String nom) {
@@ -46,14 +41,23 @@ public class HotelImpl implements Hotel {
 	}
 	
 	public int getNbEtoiles() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 	public void setNbEtoiles(int nbEtoiles) {
 		this.nbEtoiles = nbEtoiles;
 	}
-
 	
+	public float recherche(Chambre chambre, int dateArrive, int dateDepart, int nbPers) {
+		float prixApayer = 0;
+		int nbJours = 0;
+		
+		nbJours = dateDepart - dateArrive;
+		
+		if(nbPers <= chambre.getNbLits() ) {
+			prixApayer = chambre.getPrixParNuit() * nbJours;
+		}
+		return prixApayer;
+	}
 }
 	
 	

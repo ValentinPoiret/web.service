@@ -2,12 +2,19 @@ package web.service;
 
 
 public interface Hotel {
+	
+	public Chambre getChambre();
+	public void setChambre(Chambre chambre);
+	public Adresse getAdresse();
+	public void setAdresse(Adresse adresse);
+	
+	public String getNom();
+	public void setNom(String nom);
 
-	String getNom();
+	public int getNbEtoiles();
+	public void setNbEtoiles(int nbEtoiles);
 
-	int getNbEtoiles();
-
-	float recherche(Chambre chambre, int dateArrive, int dateDepart);
+	public float recherche(Chambre chambre, int dateArrive, int dateDepart);
 	
 	
 }
