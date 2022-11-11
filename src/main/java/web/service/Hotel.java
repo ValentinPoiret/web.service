@@ -1,6 +1,5 @@
 package web.service;
 
-<<<<<<< HEAD
 
 public interface Hotel {
 	
@@ -15,15 +14,6 @@ public interface Hotel {
 	public int getNbEtoiles();
 	public void setNbEtoiles(int nbEtoiles);
 
-	public float recherche(Chambre chambre, int dateArrive, int dateDepart);
+	public float recherche(int dateArrive, int dateDepart, int nbPers);
 	
-	
-=======
-public class hotel {
-
-	public hotel() {
-		// TODO Auto-generated constructor stub
-	}
-
->>>>>>> branch 'master' of https://github.com/jianglijuan0110/web.service.git
 }

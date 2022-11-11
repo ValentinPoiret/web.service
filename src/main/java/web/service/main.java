@@ -1,22 +1,37 @@
 package web.service;
-<<<<<<< HEAD
 import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
 	
-		Hotel hotel = new HotelImpl(nom, nbEtoiles, adresse);
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Entrez une nom de hôtel: \n");
 		String nomHotel = sc.next();
 		
 		System.out.println("Entrez le nombre étoiles de hôtel: \n");
-		int  nbEtoiles = sc.nextInt();
+		int nbEtoiles = sc.nextInt();
 		
+		System.out.println("Entrez le pays de l'hôtel: \n");
+		String pays = sc.next();
+		
+		System.out.println("Entrez la ville de l'hôtel: \n");
+		String ville = sc.next();
+		
+		System.out.println("Entrez la rue de l'hôtel: \n");
+		String rue = sc.next();
+		
+		System.out.println("Entrez le nombre de lits : \n");
+		int nbLits = sc.nextInt();
+		
+		System.out.println("Entrez le numero de la chambre : \n");
+		int nbPers = sc.nextInt();
 		
 		System.out.println("Entrez le nombre des personnes à héberger : \n");
-		int nbPers = sc.nextInt();
+		int num = sc.nextInt();
+		
+		System.out.println("Entrez le prix par nuit : \n");
+		int prixParNuit = sc.nextInt();
 		
 		System.out.println("Entrez une date d’arrivée : \n");
 		int dateArrive = sc.nextInt();
@@ -25,12 +40,11 @@ public class main {
 		int dateDepart = sc.nextInt();
 		float prix = 0;
 		
-		prix = hotel.recherche(null, dateArrive, dateDepart );
+		Hotel hotel = new HotelImpl(nomHotel, nbEtoiles, pays, ville, rue, nbLits, num, prixParNuit);
+		
+		prix = hotel.recherche(dateArrive, dateDepart, nbPers);
 
+		System.out.println("Le prix à payer est de ;" + prix);
 	}
-=======
-
-public class main {
->>>>>>> branch 'master' of https://github.com/jianglijuan0110/web.service.git
-
+	
 }

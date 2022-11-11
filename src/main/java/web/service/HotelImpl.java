@@ -6,12 +6,23 @@ public class HotelImpl implements Hotel {
 	private Chambre chambre;
 	private Adresse adresse;
 	
+	
 	/*CONSTRUCTEUR*/
-	public HotelImpl(String nom, int nbEtoiles, Adresse adresse) {
+	public HotelImpl(String nom, int nbEtoiles, String pays, String ville, String rue,int nbLits, int num, float prixParNuit) {
+		
+		this.nom = nom;
+		this.nbEtoiles = nbEtoiles;
+		this.adresse = new Adresse(pays,ville, rue);
+		this.chambre = new Chambre(nbLits,num,prixParNuit);
+	}
+	
+	/*CONSTRUCTEUR AVEC CHAMBRE AVEC RESERVATION*/
+public HotelImpl(String nom, int nbEtoiles, Adresse adresse,int nbLits, int num, float prixParNuit, int dateArrive, int dateDepart) {
 		
 		this.nom = nom;
 		this.nbEtoiles = nbEtoiles;
 		this.adresse = adresse;
+		this.chambre = new Chambre(nbLits,num,prixParNuit,dateArrive,dateDepart);
 	}
 	
 	/*METHODE*/
@@ -47,14 +58,14 @@ public class HotelImpl implements Hotel {
 		this.nbEtoiles = nbEtoiles;
 	}
 	
-	public float recherche(Chambre chambre, int dateArrive, int dateDepart, int nbPers) {
+	public float recherche(int dateArrive, int dateDepart, int nbPers) {
 		float prixApayer = 0;
 		int nbJours = 0;
 		
 		nbJours = dateDepart - dateArrive;
 		
-		if(nbPers <= chambre.getNbLits() ) {
-			prixApayer = chambre.getPrixParNuit() * nbJours;
+		if(nbPers <= this.chambre.getNbLits() ) {
+			prixApayer = this.chambre.getPrixParNuit() * nbJours;
 		}
 		return prixApayer;
 	}
