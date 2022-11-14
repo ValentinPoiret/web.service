@@ -1,6 +1,8 @@
 package web.service;
 
 
+
+
 public interface Hotel {
 	
 	public Chambre getChambre();
